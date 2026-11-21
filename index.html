@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$INK</title>
+  <meta name="description" content="$INK on Solana" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖋️</text></svg>" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      padding: 24px;
+    }
+    main { width: 100%; max-width: 560px; text-align: center; }
+    h1 { font-size: clamp(64px, 18vw, 120px); letter-spacing: -0.04em; line-height: 1; }
+    p.tag { margin: 16px 0 40px; color: #a3a3a3; font-size: 18px; }
+    .ca {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      background: #171717;
+      border: 1px solid #262626;
+      border-radius: 12px;
+      padding: 12px 12px 12px 16px;
+      margin-bottom: 20px;
+    }
+    .ca code {
+      flex: 1;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+      text-align: left;
+    }
+    button, a.btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      font: inherit;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    #copy { background: #262626; color: #f5f5f5; padding: 10px 14px; white-space: nowrap; }
+    #copy:hover { background: #333; }
+    a.btn.buy {
+      display: block;
+      background: #f5f5f5;
+      color: #0a0a0a;
+      padding: 18px;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    a.btn.buy:hover { background: #fff; }
+    .links { display: flex; gap: 12px; justify-content: center; }
+    .links a { color: #a3a3a3; font-size: 15px; }
+    .links a:hover { color: #f5f5f5; }
+    footer { margin-top: 48px; color: #525252; font-size: 12px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>$INK</h1>
+    <p class="tag">on Solana</p>
+
+    <div class="ca">
+      <code id="ca">3jskxKXyWGR7jvrzTLWSk37GgGMCr14M49xR8XqKpump</code>
+      <button id="copy" type="button">Copy</button>
+    </div>
+
+    <a class="btn buy" href="https://pump.fun/coin/3jskxKXyWGR7jvrzTLWSk37GgGMCr14M49xR8XqKpump" target="_blank" rel="noopener">Buy $INK</a>
+
+    <div class="links">
+      <a href="https://jup.ag/swap/SOL-3jskxKXyWGR7jvrzTLWSk37GgGMCr14M49xR8XqKpump" target="_blank" rel="noopener">Jupiter</a>
+      <a href="https://dexscreener.com/solana/3jskxKXyWGR7jvrzTLWSk37GgGMCr14M49xR8XqKpump" target="_blank" rel="noopener">Chart</a>
+    </div>
+
+    <footer>
+      $INK is a community memecoin with no affiliation with Thinking Machines or Inkling.<br />
+      Not financial advice. Always verify the contract address.
+    </footer>
+  </main>
+
+  <script>
+    const btn = document.getElementById("copy");
+    btn.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(document.getElementById("ca").textContent);
+      btn.textContent = "Copied!";
+      setTimeout(() => (btn.textContent = "Copy"), 1500);
+    });
+  </script>
+</body>
+</html>
